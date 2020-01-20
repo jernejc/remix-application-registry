@@ -2,12 +2,12 @@
 
 Unit testing with jest and typescript.
 
-###Install dependencies
+Install dependencies
 ```
 npm i
 ```
 
-###Run tests
+Run tests
 ```
 npm t
 ```
