@@ -5,7 +5,7 @@ import AppManager from './AppManager';
 export default class ApplicationRegistry {
   plugins: Record<string, App>
 
-  constructor(private manager: AppManager) { 
+  constructor(private manager: AppManager) {
     this.plugins = {} // there's probably a better solution here, but needed a default value otherwise line 12 failed on first register
   }
 
