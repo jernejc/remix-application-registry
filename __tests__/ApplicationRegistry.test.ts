@@ -31,7 +31,7 @@ test('Register a new application called MockApp', () => {
 
 test('Call a method on MockApp', () => {
   // Set mock data on applicationRegistry
-  applicationRegistry.plugins['MockApp'] = MockApp;
+  applicationRegistry.register('MockApp', MockApp);
   MockAppManager.isActivated.mockReturnValueOnce(true);
 
   // Test method call
@@ -44,7 +44,7 @@ test('Catch error when calling a non-existing method on MockApp', () => {
   const mockError = new Error('InvalidMethod');
 
   // Set mock data on applicationRegistry
-  applicationRegistry.plugins['MockApp'] = MockApp;
+  applicationRegistry.register('MockApp', MockApp);
   MockAppManager.isActivated.mockReturnValueOnce(true);
   MockApp.call.mockImplementation(() => {
     throw mockError;
@@ -58,7 +58,7 @@ test('Catch error when calling a non-existing method on MockApp', () => {
 
 test('Register event on MockApp', () => {
   // Set mock data on applicationRegistry
-  applicationRegistry.plugins['MockApp'] = MockApp;
+  applicationRegistry.register('MockApp', MockApp);
   MockAppManager.isActivated.mockReturnValueOnce(true);
 
   const mockCb = jest.fn();
@@ -71,7 +71,7 @@ test('Register event on MockApp', () => {
 
 test('Unregister event on MockApp', () => {
   // Set mock data on applicationRegistry
-  applicationRegistry.plugins['MockApp'] = MockApp;
+  applicationRegistry.register('MockApp', MockApp);
   MockAppManager.isActivated.mockReturnValueOnce(true);
 
   // Test event
